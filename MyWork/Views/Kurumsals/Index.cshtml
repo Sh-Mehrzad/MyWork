@@ -1,0 +1,101 @@
+﻿@model IEnumerable<MyWork.Models.Kurumsal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirmaAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VergiDairesi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VergiNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yetkili)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GSM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Not)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppliedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirmaAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VergiDairesi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VergiNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yetkili)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GSM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Not)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppliedDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

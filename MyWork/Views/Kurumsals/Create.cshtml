@@ -1,0 +1,152 @@
+﻿@model MyWork.Models.Kurumsal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Kurumsal</h4>
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="FirmaAdi" class="control-label"></label>
+                <input asp-for="FirmaAdi" class="form-control" />
+                <span asp-validation-for="FirmaAdi" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="VergiDairesi" class="control-label"></label>
+                <input asp-for="VergiDairesi" class="form-control" />
+                <span asp-validation-for="VergiDairesi" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="VergiNo" class="control-label"></label>
+                <input type="number" asp-for="VergiNo" class="form-control" />
+                <span asp-validation-for="VergiNo" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <textarea asp-for="Adres" class="form-control"></textarea>
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Il" class="control-label"></label>
+                @Html.DropDownList("Il", (IEnumerable<SelectListItem>)ViewBag.IlList, htmlAttributes: new { @class = "form-control" })
+                <span asp-validation-for="Il" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">                
+                <label asp-for="Ilce" class="control-label"></label>
+                @Html.DropDownList("Ilce", (IEnumerable<SelectListItem>)ViewBag.IlceList, htmlAttributes: new { @class = "form-control" })
+                <span asp-validation-for="Ilce" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Telefon" class="control-label"></label>
+                <input asp-for="Telefon" class="form-control" />
+                <span asp-validation-for="Telefon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Fax" class="control-label"></label>
+                <input asp-for="Fax" class="form-control" />
+                <span asp-validation-for="Fax" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Website" class="control-label"></label>
+                <input asp-for="Website" class="form-control" />
+                <span asp-validation-for="Website" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="PaketList" class="control-label"></label>
+                @Html.DropDownList("PaketList", (IEnumerable<SelectListItem>)ViewBag.PaketList, htmlAttributes: new { @class = "form-control" })
+                <span asp-validation-for="PaketList" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="ReklamList" class="control-label"></label>
+                @Html.DropDownList("ReklamList", (IEnumerable<SelectListItem>)ViewBag.ReklamList, htmlAttributes: new { @class = "form-control" })
+                <span asp-validation-for="ReklamList" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Yetkili" class="control-label"></label>
+                <input asp-for="Yetkili" class="form-control" />
+                <span asp-validation-for="Yetkili" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="GSM" class="control-label"></label>
+                <input asp-for="GSM" class="form-control" />
+                <span asp-validation-for="GSM" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="Not" class="control-label"></label>
+                <textarea asp-for="Not" class="form-control"></textarea>
+                <span asp-validation-for="Not" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
